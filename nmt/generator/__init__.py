@@ -1,0 +1,3 @@
+from nmt.generator.beam_search_generator import BeamSearchGenerator
+from nmt.generator.greedy_generator import GreedyGenerator, TorchGreedyGenerator
+from nmt.generator.jit_generator import JITGenerator

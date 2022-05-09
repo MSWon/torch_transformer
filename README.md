@@ -1,10 +1,14 @@
-# torch_transformer
-Pytorch Transformer for Machine Translation
+# pytorch_transformer
 
-## Installation
+## train
 
-```bash
-git clone https://github.com/MSWon/torch_transformer.git
+```
+sh train_with_docker.sh
+```
 
-pip install .
+## infer
+
+
+```
+sh infer_corpus.sh
 ```

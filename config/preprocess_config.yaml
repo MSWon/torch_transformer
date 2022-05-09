@@ -1,0 +1,12 @@
+src_lang: "ko"
+tgt_lang: "en"
+src_corpus_path: "/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/dev_data/aihub.ko"
+tgt_corpus_path: "/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/dev_data/aihub.en"
+task_list:
+  - name: RemoveLongSentTask
+  - name: URLReplaceTask
+  - name: TrainTokenizerTask
+    instance:
+      src_vocab_size: 32000
+      tgt_vocab_size: 32000
+  - name: TokenizeTask
