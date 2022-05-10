@@ -1,20 +1,10 @@
 #!/bin/bash
 
-#####################
-# Parameter Setting #
-#####################
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
-
-MAIN_PATH="/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer"
+MAIN_PATH="${YOUR_GIT_REPO_PATH}/torch_transformer"
 MODEL_FILE_PATH="${MAIN_PATH}/koen_aihub_150k/model_150000.pt"
 PACKAGE_NAME="koen.2022.0505"
 DEVICE="cpu"
 #DEVICE="cuda"
-
-##############
-# Run Script #
-##############
 
 docker run -it \
     -v ${MAIN_PATH}:${MAIN_PATH} \
