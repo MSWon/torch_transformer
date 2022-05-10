@@ -1,9 +1,9 @@
-src_train_corpus_path: '/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/train_data/train.en'
-tgt_train_corpus_path: '/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/train_data/train.ko'
-src_valid_corpus_path: '/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/train_data/dev.en'
-tgt_valid_corpus_path: '/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/train_data/dev.ko'
-src_vocab_path: '/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/train_data/tokenizer/en.vocab'
-tgt_vocab_path: '/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/train_data/tokenizer/ko.vocab'
+src_train_corpus_path: '${DATA_PATH}/train.en'
+tgt_train_corpus_path: '${DATA_PATH}/train.ko'
+src_valid_corpus_path: '${DATA_PATH}/dev.en'
+tgt_valid_corpus_path: '${DATA_PATH}/dev.ko'
+src_vocab_path: '${DATA_PATH}/tokenizer/en.vocab'
+tgt_vocab_path: '${DATA_PATH}/tokenizer/ko.vocab'
 num_vocabs: 32000
 src_unk_symbol: 31999
 tgt_unk_symbol: 31999
