@@ -1,7 +1,7 @@
 src_lang: "ko"
 tgt_lang: "en"
-src_corpus_path: "/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/dev_data/aihub.ko"
-tgt_corpus_path: "/home1/irteam/users/minsub/for_dev/minsub_git/torch_transformer/dev_data/aihub.en"
+src_corpus_path: "${DATA_PATH}/aihub.ko"
+tgt_corpus_path: "${DATA_PATH}/aihub.en"
 task_list:
   - name: RemoveLongSentTask
   - name: URLReplaceTask
