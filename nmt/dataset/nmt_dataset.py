@@ -75,9 +75,6 @@ class NmtDataset(object):
         return result_batch
 
     def collate_fn(self, batch):
-        """
-        mttrain dataset/task 와 비슷한 기능을 구현하면 될 것으로 보임
-        """
         batch = self.filter_long_sentence(batch)
         batch = self.pad_sentence(batch)
         return batch
