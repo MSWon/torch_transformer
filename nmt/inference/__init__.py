@@ -9,9 +9,9 @@ from nmt.dataset.utils import (
     input_words_to_idx,
     idx_to_output_words,
     build_vocab,
-    get_num_line,
-    parse_yaml
+    get_num_line
 )
+from nmt.common.utils import parse_yaml
 from nmt.service.utils import (
     MODEL_PATH,
     TOKENIZER_PATH,
