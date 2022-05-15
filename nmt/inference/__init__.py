@@ -1,6 +1,7 @@
 import torch
 import time
 import os
+import logging
 import numpy as np
 
 from typing import List
@@ -21,8 +22,10 @@ from nmt.service.utils import (
 )
 from nmt.generator import JITGenerator
 from nmt.tokenize import Tokenizer
-from nmt.common.utils import logger
+from nmt.common.utils import Logger
 from nmt.inference.utils import pad_input_batch
+
+logger = Logger()
 
 
 class ServiceTransformer(object):
@@ -67,9 +70,12 @@ class ServiceTransformer(object):
         self.tgt_eos_symbol = config.get("tgt_eos_symbol", 2)
         self.batch_size = batch_size
 
-        self.infer(["warm up model"])
+        self.infer(lines=["warm up model"],
+                   warm_up=True)
 
-    def infer(self, lines: List[str]) -> List[str]:
+    def infer(self, lines: List[str], warm_up = False) -> List[str]:
+        self.log.setLevel(logging.INFO) if warm_up else self.log.setLevel(logging.DEBUG)
+
         src_input_ids = []
         for line in lines:
             tokenized_line = self.src_tok.tokenize(line)

@@ -6,9 +6,9 @@ from multiprocessing import Pool
 from tqdm import tqdm
 from typing import Tuple, List
 from nmt.preprocess.utils import CHUNK_SIZE, BUFFER_LINES
-from nmt.common.utils import logger
+from nmt.common.utils import Logger
 
-
+logger = Logger()
 log = logger.get_logger(log_level="info")
 
 

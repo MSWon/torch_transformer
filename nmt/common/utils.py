@@ -40,6 +40,3 @@ class Logger(object):
         logger.addHandler(handler)
 
         self.logger = logger
-
-
-logger = Logger()

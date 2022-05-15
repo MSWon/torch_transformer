@@ -20,13 +20,14 @@ from nmt.train.trainer import (
     build_loss_fn,
     forward_and_loss
 )
-from nmt.common.utils import logger, parse_yaml
+from nmt.common.utils import Logger, parse_yaml
 
-
-DEVICE = "cuda"
+logger = Logger()
+log = logger.get_logger("debug")
 
 hvd.init()
 MASTER_WORKER = hvd.rank() == 0
+DEVICE = "cuda"
 
 
 def train_loop(model, optimizer, loss_fn, dataset, config, saved_path, device):
@@ -69,7 +70,7 @@ def train_loop(model, optimizer, loss_fn, dataset, config, saved_path, device):
             if global_step % tensorboard_iter == 0:
                 if MASTER_WORKER:
                     step_time = time.time() - start_time
-                    logger.get_logger("debug").info("Global step: {}, loss: {} ({} seconds)".format(global_step, round(loss.detach().item(), 2), round(step_time, 2)))
+                    log.info("Global step: {}, loss: {} ({} seconds)".format(global_step, round(loss.detach().item(), 2), round(step_time, 2)))
                     writer.add_scalar("train_loss", loss.detach().item(), global_step)
                     writer.add_scalar("learning_rate", learning_rate, global_step)
                     writer.add_scalar("gradient_norm", gradient_norm, global_step)
