@@ -4,6 +4,7 @@ from nmt import __version__
 from nmt.cli._cmd import nmt_cmd
 from nmt.cli._service import nmt_service
 from nmt.cli._preprocess import nmt_preprocess
+from nmt.cli._download import nmt_download
 
 
 def main():
@@ -33,6 +34,12 @@ def main():
     subparser_preprocess = subparsers.add_parser("preprocess", help="package for preprocess")
     subparser_preprocess.add_argument("--config_path", "-c", required=True, help="config path")
     subparser_preprocess.set_defaults(func=nmt_preprocess)
+
+    # nmt service
+    subparser_download = subparsers.add_parser("download", help="package for download")
+    subparser_download.add_argument("--src_lang", "-s", required=True, help="src lang")
+    subparser_download.add_argument("--tgt_lang", "-t", required=True, help="tgt lang")
+    subparser_download.set_defaults(func=nmt_download)
 
     args = parser.parse_args()
 
