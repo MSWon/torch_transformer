@@ -4,10 +4,12 @@ def nmt_service(args):
     :return:
     """
     import os
-
+    from nmt.service.utils import check_requested_langpair_support
     package_path = args.package_path
     src_lang = args.src_lang
     tgt_lang = args.tgt_lang
+    check_requested_langpair_support(src_lang, tgt_lang)
+
     device = args.device
     port_num = args.port
 
