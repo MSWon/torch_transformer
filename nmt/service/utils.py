@@ -3,6 +3,14 @@ import requests
 import shutil
 
 from tqdm import tqdm
+from pydantic import BaseModel
+
+
+class TranslateRequest(BaseModel):
+    SrcLang: str
+    TgtLang: str
+    Text: str
+
 
 MODEL_PATH = "model/exported_model.pt"
 TOKENIZER_PATH = "tokenizer/{}.model"

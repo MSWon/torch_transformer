@@ -26,7 +26,7 @@ def main():
     subparser_service.add_argument("package_path", help="package path")
     subparser_service.add_argument("--src_lang", "-s", required=True, help="src lang")
     subparser_service.add_argument("--tgt_lang", "-t", required=True, help="tgt lang")
-    subparser_service.add_argument("--port", "-p", required=True, help="port number")
+    subparser_service.add_argument("--port", "-p", type=int, required=True, help="port number")
     subparser_service.add_argument("--device", required=False, default="cpu")
     subparser_service.set_defaults(func=nmt_service)
 
