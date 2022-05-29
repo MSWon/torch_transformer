@@ -102,12 +102,19 @@ nmt cmd koen.2022.0505 -s ko -t en
 
 ## service
 
-- launch Flask by gunicorn 
+- launch FastAPI by uvicorn 
 
 ```bash
 nmt service ${PACKAGE_PATH} -s ${SRC_LANG} -t ${TGT_LANG} -p ${PORT_NUM}
 nmt service koen.2022.0505 -s ko -t en -p 6006
 ```
+```bash
+INFO:     Started server process [87763]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+```
+
 
 - cmd result
 
