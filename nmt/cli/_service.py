@@ -10,6 +10,7 @@ def nmt_service(args):
     src_lang = args.src_lang
     tgt_lang = args.tgt_lang
     device = args.device
+    workers = args.workers
     port = args.port
 
     server = HTTPServer(package_path=package_path,
@@ -17,6 +18,7 @@ def nmt_service(args):
                         tgt_lang=tgt_lang,
                         batch_size=1,
                         device=device,
+                        workers=workers,
                         port=port)
 
     server.run()

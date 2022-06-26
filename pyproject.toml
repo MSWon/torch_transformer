@@ -11,6 +11,7 @@ nmt = "nmt.cli:main"
 python = "~3.7"
 
 fastapi = "0.78.0"
+gunicorn = "20.1.0"
 uvicorn = "0.17.6"
 requests = "2.27.1"
 

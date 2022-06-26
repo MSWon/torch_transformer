@@ -1,9 +1,14 @@
 import os
 import requests
 import shutil
+import sys
+import traceback
 
 from tqdm import tqdm
 from pydantic import BaseModel
+from gunicorn import util, debug
+from gunicorn.config import get_default_config_file
+from gunicorn.app.base import Application
 
 
 class TranslateRequest(BaseModel):
