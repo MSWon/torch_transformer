@@ -102,17 +102,24 @@ nmt cmd koen.2022.0505 -s ko -t en
 
 ## service
 
-- launch FastAPI by uvicorn 
+- Launch FastAPI by gunicorn 
 
 ```bash
 nmt service ${PACKAGE_PATH} -s ${SRC_LANG} -t ${TGT_LANG} -p ${PORT_NUM}
-nmt service koen.2022.0505 -s ko -t en -p 6006
+nmt service koen.2022.0505 -s ko -t en -w 2 -p 6006
 ```
 ```bash
-INFO:     Started server process [87763]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[2022-06-26 23:51:57 +0900] [45498] [INFO] Starting gunicorn 20.1.0
+[2022-06-26 23:51:57 +0900] [45498] [INFO] Listening at: http://0.0.0.0:6008 (45498)
+[2022-06-26 23:51:57 +0900] [45498] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2022-06-26 23:51:58 +0900] [45507] [INFO] Booting worker with pid: 45507
+[2022-06-26 23:51:58 +0900] [45509] [INFO] Booting worker with pid: 45509
+[2022-06-26 23:52:00 +0900] [45507] [INFO] Started server process [45507]
+[2022-06-26 23:52:00 +0900] [45509] [INFO] Started server process [45509]
+[2022-06-26 23:52:00 +0900] [45507] [INFO] Waiting for application startup.
+[2022-06-26 23:52:00 +0900] [45509] [INFO] Waiting for application startup.
+[2022-06-26 23:52:00 +0900] [45507] [INFO] Application startup complete.
+[2022-06-26 23:52:00 +0900] [45509] [INFO] Application startup complete.
 ```
 
 
